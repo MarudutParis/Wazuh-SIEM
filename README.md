@@ -1,11 +1,6 @@
-# Detection of SMB Brute Force and Remote Execution Attacks Using Wazuh SIEM
+# SMB Brute Force and Privilege Escalation Detection using Wazuh SIEM
 
 This project demonstrates a cybersecurity lab focused on detecting SMB brute-force attacks and privilege escalation activities using Wazuh SIEM. The lab simulates an attack from a Kali Linux machine against a Windows system and analyzes how security events are captured and detected.
-
-## Disclaimer
-This project was conducted in a controlled lab environment for educational purposes only.
-
----
 
 ## Lab Environment
 - Attacker Machine: Kali Linux  
@@ -23,24 +18,20 @@ Nmap was used to identify open ports and services on the target machine, reveali
 ---
 
 ### 2. SMB Brute Force Attack
-A brute-force attack was performed using NetExec with username and password wordlists (including rockyou.txt).  
-Valid credentials were discovered during the attack:
-- Username: Administrator  
-- Password: 123456  
+A brute-force attack was performed using NetExec with username and password wordlists.  
+Valid credentials were successfully discovered during the attack, demonstrating the risk of weak authentication mechanisms.
 
 ---
 
 ### 3. Brute Force Detection (Wazuh)
 Wazuh SIEM detected multiple failed login attempts (Event ID 4625), indicating a brute-force attack.  
-The attack source was identified as:
-- Attacker IP: 192.168.0.179  
+The attack source was identified through log analysis.
 
 ---
 
 ### 4. Shell Access (Remote Execution)
-Using valid administrator credentials, remote command execution was performed via Impacket PsExec.  
-A remote shell was successfully obtained with elevated privileges:
-- NT AUTHORITY\SYSTEM  
+Using valid credentials, remote command execution was performed via Impacket PsExec.  
+A remote shell was successfully obtained with elevated privileges.
 
 ---
 
@@ -79,5 +70,3 @@ Wazuh SIEM successfully detected:
 - Detected Attacker IP Address  
 - Remote SYSTEM Shell  
 - Wazuh Detection Alerts  
-
----
