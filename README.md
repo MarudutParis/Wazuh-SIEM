@@ -1,4 +1,4 @@
-# SMB Brute Force and Privilege Escalation Detection using Wazuh SIEM
+# Detection of SMB Brute Force and Remote Execution Attacks Using Wazuh SIEM
 
 This project demonstrates a cybersecurity lab focused on detecting SMB brute-force attacks and privilege escalation activities using Wazuh SIEM. The lab simulates an attack from a Kali Linux machine against a Windows system and analyzes how security events are captured and detected.
 
